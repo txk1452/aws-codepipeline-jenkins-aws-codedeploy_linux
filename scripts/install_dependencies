@@ -1,3 +1,12 @@
 #!/bin/bash
 yum install -y httpd
 
+# I want to make sure that the directory is clean and has nothing left over from
+# previous deployments. The servers auto scale so the directory may or may not
+# exist.
+
+if [ -d /var/www/html ]; then
+    rm -rf /var/www/html
+fi
+mkdir -vp /var/www/html
+
