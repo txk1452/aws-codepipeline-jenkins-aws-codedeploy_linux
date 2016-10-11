@@ -3,6 +3,7 @@ os: linux
 files:
   - source: /index.html
     destination: /var/www/html/
+    overwrite: yes
 hooks:
   BeforeInstall:
     - location: scripts/install_dependencies
